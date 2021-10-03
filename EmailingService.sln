@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailingService", "src\EmailingService\EmailingService.csproj", "{F734AA21-1A1F-4534-9B7F-9925BCC22932}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8235893F-EB75-4DC6-9815-522AEBEEC7E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailingService.Contracts", "src\EmailingService.Contracts\EmailingService.Contracts.csproj", "{EF2F8368-9E04-4968-9BF2-3971E0389305}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F734AA21-1A1F-4534-9B7F-9925BCC22932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F734AA21-1A1F-4534-9B7F-9925BCC22932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F734AA21-1A1F-4534-9B7F-9925BCC22932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F734AA21-1A1F-4534-9B7F-9925BCC22932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2F8368-9E04-4968-9BF2-3971E0389305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2F8368-9E04-4968-9BF2-3971E0389305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2F8368-9E04-4968-9BF2-3971E0389305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2F8368-9E04-4968-9BF2-3971E0389305}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F734AA21-1A1F-4534-9B7F-9925BCC22932} = {8235893F-EB75-4DC6-9815-522AEBEEC7E8}
+		{EF2F8368-9E04-4968-9BF2-3971E0389305} = {8235893F-EB75-4DC6-9815-522AEBEEC7E8}
+	EndGlobalSection
+EndGlobal

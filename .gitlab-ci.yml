@@ -1,0 +1,8 @@
+stages:
+  - build
+
+build :
+  stage: build
+  image: '$CI_REGISTRY/docker/dotnet/sdk:5.0'
+  script:
+    - dotnet build
