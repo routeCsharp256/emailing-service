@@ -30,9 +30,17 @@ namespace EmailingService.Extensions
                 "Для вас подготовлен мерч",
                 $"<p>{EmailMessageTemplate.NamePlaceholder}, ещё раз поздравляем с успешным прохождением испытательного срока! Вам необходимо подойти на 30 этаж и забрать подготовленный набор мерча. Сегодня вы получите фирменную толстовочку и рюкзачок!</p>");
 
-            public static readonly EmailMessageTemplate ConferencePack = new(
+            public static readonly EmailMessageTemplate ConferenceListenerPack = new(
                 "Для вас подготовлен мерч",
-                $"<p>{EmailMessageTemplate.NamePlaceholder}, вам необходимо подойти на 30 этаж и забрать подготовленный набор мерча для участия в конференции. Чтобы выглядеть на все сто, мы дадим Вам супер классную толстовочку!</p>");
+                $"<p>{EmailMessageTemplate.NamePlaceholder}, вам необходимо подойти на 30 этаж и забрать подготовленный набор мерча для участия в конференции в качестве слушателя. Чтобы выглядеть на все сто, мы дадим Вам супер классную толстовочку!</p>");
+            
+            public static readonly EmailMessageTemplate ConferenceSpeakerPack = new(
+                "Для вас подготовлен мерч",
+                $"<p>{EmailMessageTemplate.NamePlaceholder}, вам необходимо подойти на 30 этаж и забрать подготовленный набор мерча для участия в конференции в качестве спикера. Чтобы выглядеть на все сто, мы дадим Вам супер классную толстовочку и кепку!</p>");
+            
+            public static readonly EmailMessageTemplate VeteranPack = new(
+                "Для вас подготовлен мерч",
+                $"<p>{EmailMessageTemplate.NamePlaceholder}, вам необходимо подойти на 30 этаж и забрать подготовленный набор мерча за выслугу лет. Спасибо, с Вами очень приятно работать! Мы хотим отблагодарить Вас фирменным костюмом!</p>");
         }
     }
 }

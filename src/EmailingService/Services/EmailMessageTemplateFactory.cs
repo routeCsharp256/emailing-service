@@ -44,7 +44,9 @@ namespace EmailingService.Services
             {
                 MerchType.WelcomePack => TemplatePool.MerchDelivery.WelcomePack,
                 MerchType.ProbationPeriodEndingPack => TemplatePool.MerchDelivery.ProbationPeriodEndingPack,
-                MerchType.ConferencePack => TemplatePool.MerchDelivery.ConferencePack,
+                MerchType.ConferenceListenerPack => TemplatePool.MerchDelivery.ConferenceListenerPack,
+                MerchType.ConferenceSpeakerPack => TemplatePool.MerchDelivery.ConferenceSpeakerPack,
+                MerchType.VeteranPack => TemplatePool.MerchDelivery.VeteranPack,
                 _ => throw new ArgumentOutOfRangeException(nameof(merchType))
             };
         }
