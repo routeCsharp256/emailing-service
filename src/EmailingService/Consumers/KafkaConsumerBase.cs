@@ -12,6 +12,8 @@ namespace EmailingService.Consumers
     public abstract class KafkaConsumerBase<TMessage> : BackgroundService
     {
         protected string TopicName { get; }
+
+        protected virtual int HeartbeatTimeoutMs { get; } = 100;
         
         private readonly IKafkaConsumerFactory _kafkaConsumerFactory;
         private readonly ILogger<KafkaConsumerBase<TMessage>> _logger;
@@ -28,7 +30,27 @@ namespace EmailingService.Consumers
         
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            using var consumer = _kafkaConsumerFactory.Create<Ignore, string>();
+            // ReSharper disable once MethodSupportsCancellation
+            await Task.Run(async () =>
+                {
+                    while (!cancellationToken.IsCancellationRequested)
+                    {
+                        try
+                        {
+                            using var consumer = _kafkaConsumerFactory.Create<Ignore, string>();
+                            await ConsumeMessages(consumer, cancellationToken);
+                        }
+                        catch (Exception exception)
+                        {
+                            _logger.LogError(exception, "Something went wrong with consumer");
+                            await Task.Delay(HeartbeatTimeoutMs, cancellationToken);
+                        }
+                    }
+                });
+        }
+
+        private async Task ConsumeMessages(IConsumer<Ignore, string> consumer, CancellationToken cancellationToken)
+        {
             consumer.Subscribe(TopicName);
             while (!cancellationToken.IsCancellationRequested)
             {
